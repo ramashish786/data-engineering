@@ -1,0 +1,24 @@
+
+
+use database DBT_TEST;
+
+use schema bronze;
+
+DROP TABLE IF EXISTS dbt_test.bronze.superstore_raw;
+
+create table dbt_test.bronze.superstore_raw(
+row_id string,	order_id string,order_date date, ship_date date,
+ship_mode string, customer_id string, customer_name string,	segment	string, country	string,
+city string, state string,	
+postal_code string,	region string, product_id string,	
+category string,sub_category string,	
+product_name string, sales float,	
+quantity int,	discount float,
+profit float);
+
+select * from dbt_test.bronze.dim_customer limit 10;
+
+select * from dbt_test.bronze.dim_product limit 10;
+
+select * from dbt_test.bronze.dim_region limit 10;
+

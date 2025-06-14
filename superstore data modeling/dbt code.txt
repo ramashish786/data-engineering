@@ -1,0 +1,73 @@
+### dim_customer.sql
+
+{{
+    config(
+        materialized='table'
+    )
+}}
+
+
+SELECT DISTINCT
+    customer_id,
+    customer_name,
+    segment
+FROM dbt_test.bronze.superstore_raw
+
+### dim_product.sql
+
+{{
+    config(
+        materialized='table'
+    )
+}}
+SELECT DISTINCT
+    product_id,
+    product_name,
+    sub_category,
+    category
+FROM dbt_test.bronze.superstore_raw
+
+
+### dim_region.sql
+
+
+{{
+    config(
+        materialized='table'
+    )
+}}
+
+
+SELECT DISTINCT
+    country,
+    region,
+    state,
+    city,
+    postal_code
+FROM dbt_test.bronze.superstore_raw
+
+
+### fact_sales.sql
+
+{{
+    config(
+        materialized='table'
+    )
+}}
+
+SELECT
+    order_id,
+    order_date,
+    ship_date,
+    ship_mode,
+
+    customer_id,
+    product_id,
+    postal_code,
+
+    sales,
+    quantity,
+    discount,
+    profit
+
+FROM dbt_test.bronze.superstore_raw
