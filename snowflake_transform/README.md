@@ -1,4 +1,4 @@
-In this project I have superstore to do some transfromation like creating dimesion table and fact table
+In this project I have used superstore data to do some transfromation like creating dimension table and fact table and test cases
 
 ### Below are snips of the project 
 
