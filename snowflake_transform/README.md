@@ -3,3 +3,4 @@ In this project I have used superstore data to do some transfromation like creat
 ### Below are snips of the project 
 
 ![alt text](image.png)
+![alt text](image-1.png)
