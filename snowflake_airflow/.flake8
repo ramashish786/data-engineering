@@ -1,3 +1,0 @@
-[flake8]
-ignore = E501,N812
-docstring-convention = numpy
