@@ -7,6 +7,6 @@ In this project I have used superstore data to do some transfromation like creat
 
 ### Ariflow
 
+![alt text](img2.jpg)
 ![alt text](img3.jpg) 
 
-![alt text](img2.jpg)
