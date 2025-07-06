@@ -19,26 +19,26 @@ with DAG(
 
     dim_customer = BashOperator(
         task_id='dim_customer',
-        bash_command='cd "D:\Data Engineer\test_project\snowflake_transform" && dbt run --select dim_customer',
+        bash_command=r'dbt run --select dim_customer  --profiles-dir /home/airflow/.dbt --project-dir /opt/airflow/test_project/snowflake_transform',
     )
 
     dim_region = BashOperator(
         task_id='dim_region',
-        bash_command='cd "D:\Data Engineer\test_project\snowflake_transform" && dbt run --select dim_region',
+        bash_command=r'dbt run --select dim_region  --profiles-dir /home/airflow/.dbt --project-dir /opt/airflow/test_project/snowflake_transform',
     )
 
     fact_sales = BashOperator(
         task_id='fact_sales',
-        bash_command='cd "D:\Data Engineer\test_project\snowflake_transform" && dbt run --select fact_sales',
+        bash_command=r'dbt run --select fact_sales  --profiles-dir /home/airflow/.dbt --project-dir /opt/airflow/test_project/snowflake_transform',
     )
 
     region_wise = BashOperator(
         task_id='region_wise',
-        bash_command='cd "D:\Data Engineer\test_project\snowflake_transform" && dbt run --select region_wise',
+        bash_command=r'dbt run --select region_wise  --profiles-dir /home/airflow/.dbt --project-dir /opt/airflow/test_project/snowflake_transform',
     )
     total_orders = BashOperator(
         task_id='total_orders',
-        bash_command='cd "D:\Data Engineer\test_project\snowflake_transform" && dbt run --select total_orders',
+        bash_command=r'dbt run --select total_orders  --profiles-dir /home/airflow/.dbt --project-dir /opt/airflow/test_project/snowflake_transform',
     )
 
     dim_customer >> dim_region >> fact_sales >> region_wise >> total_orders
